@@ -1,0 +1,20 @@
+## In This Folder
+
+| Document | Description |
+|----------|-------------|
+| [Agent Delivery Reference Library](./Agent-Delivery-Reference-Library.md) | Curated Microsoft and non-Microsoft references organised by delivery question — agent type selection, connecting knowledge, grounding quality, multi-agent, governance, licensing and cost, publishing, testing, ALM, and responsible AI. |
+| [Known Limitations & Workarounds](./Known-Limitations-and-Workarounds.md) | Constraints observed repeatedly across real agent deliveries, with the design responses that work. Use at qualification and design, not during firefighting. |
+
+---
+
+## Useful Resources
+
+| Document | Description |
+|----------|-------------|
+| [Copilot Studio Documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/) | Comprehensive guide to building AI-driven agents and workflows with Copilot Studio, covering agent creation, topic authoring, knowledge integration, tools, MCP server connections, publishing, and channel deployment. |
+| [Power Platform Solution Management](https://learn.microsoft.com/en-us/power-platform/alm/solution-concepts-alm) | End-to-end ALM (Application Lifecycle Management) guidance for Power Platform, including solution concepts (managed vs. unmanaged), environment strategy, solution layering, DevOps automation, and CI/CD pipelines using Azure DevOps and GitHub Actions. |
+| [Power Platform Solution Import Guide](https://learn.microsoft.com/en-us/power-platform/alm/solution-concepts-alm) | Step-by-step instructions for importing Power Platform solutions (.zip/.cab) into target environments, including options for plugin step activation, connection references, environment variables, and pipeline-based deployment. |
+| [Power Platform VNet Support](https://learn.microsoft.com/en-us/power-platform/admin/vnet-support-overview) | Setup guide for integrating Power Platform with Azure Virtual Network using subnet delegation, enabling secure outbound connectivity to private enterprise resources (Azure SQL, Key Vault, on-premises services) without exposing them to the public internet. |
+| [Azure AI Search Documentation](https://learn.microsoft.com/en-us/azure/search/) | Documentation for Azure AI Search, a fully managed cloud-based information retrieval service supporting full-text, vector, hybrid, and multimodal search, as well as agentic retrieval (RAG) for grounding AI agents with enterprise data. |
+| [Azure Functions Documentation](https://learn.microsoft.com/en-us/azure/azure-functions/) | Documentation for Azure Functions, a serverless event-driven compute platform (PaaS) that supports multiple languages (C#, Java, Python, JavaScript, etc.) for building scalable web APIs, processing IoT streams, managing message queues, and hosting custom server workloads. |
+| [Application Insights Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) | Overview of Azure Monitor Application Insights with OpenTelemetry (OTel) integration, covering application performance monitoring, real-time diagnostics, and AI agent observability — including setup guidance for Copilot Studio agents, Azure AI Foundry agents, and self-hosted agents using the Microsoft Agent Framework. |

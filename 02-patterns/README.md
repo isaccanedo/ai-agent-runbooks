@@ -1,0 +1,192 @@
+# How to Use Patterns
+
+This guide explains how the `02-patterns/` folder is organized, how to navigate technical pattern documentation, and how to apply patterns to your agent delivery scenarios.
+
+---
+
+## What Are Patterns?
+
+Patterns are reusable technical building blocks that solve recurring implementation challenges in AI Agent delivery. Unlike Scenarios (which describe a specific business use case end-to-end), Patterns are:
+
+| Dimension    | Scenarios (`01-scenarios/`) | Patterns (`02-patterns/`) |
+|--------------|-----------------------------|---------------------------|
+| Focus        | Business use case (e.g., HR Onboarding) | Technical implementation (e.g., RAG) |
+| Scope        | End-to-end delivery runbook | Reusable across multiple scenarios |
+| Start point  | Customer use case           | Architecture decision |
+| Output       | Deployed agent              | Validated technical component |
+
+> 💡 **Tip:** Patterns are not standalone deliverables — they are applied *within* a scenario. Always identify the relevant pattern(s) before opening a Scenario Runbook.
+
+---
+
+## Pattern Folder Structure Overview
+
+The `02-patterns/` folder contains one subfolder per supported technical pattern. Each pattern folder is self-contained and follows a standardized structure.
+
+```
+02-patterns/
+├── README.md                                                        ← 📖 You are here
+├── Agent-Governance-and-Rollout-Control-Plane/                       ← ✅ Available
+│   ├── Agent-Governance-and-Rollout-Control-Plane.md
+│   └── Agent-Governance-and-Rollout-Control-Plane-Runbook.md
+├── Agent-Publishing-and-Channel-Deployment/                          ← ✅ Available
+│   ├── Agent-Publishing-and-Channel-Deployment.md
+│   └── Agent-Publishing-and-Channel-Deployment-Runbook.md
+├── Agentic-Workflow-Orchestration/                                  ← ✅ Available
+│   └── Agentic-Workflow-Orchestration.md
+├── Branded-Office-Artifact-Generation/                               ← ✅ Available
+│   ├── Branded-Office-Artifact-Generation.md
+│   └── Branded-Office-Artifact-Generation-Runbook.md
+├── Copilot-Connector-Knowledge-Onboarding/                           ← ✅ Available
+│   ├── Copilot-Connector-Knowledge-Onboarding.md
+│   └── Copilot-Connector-Knowledge-Onboarding-Runbook.md
+├── Copilot-Credits-Cost-Control/                                     ← ✅ Available
+│   ├── Copilot-Credits-Cost-Control.md
+│   └── Copilot-Credits-Cost-Control-Runbook.md
+├── Copilot-Studio-Migration-and-Modernisation/                       ← ✅ Available
+│   ├── Copilot-Studio-Migration-and-Modernisation.md
+│   └── Copilot-Studio-Migration-and-Modernisation-Runbook.md
+├── Copilot-Studio-and-Foundry-Split-Architecture/                    ← ✅ Available
+│   ├── Copilot-Studio-and-Foundry-Split-Architecture.md
+│   └── Copilot-Studio-and-Foundry-Split-Architecture-Runbook.md
+├── Declarative-vs-Custom-engine-agent/                              ← ✅ Available
+│   ├── Declarative-Agents-vs-Copilot-Studio-Custom-Engine-Agents.md
+│   └── Declarative-Agents-vs-Copilot-Studio-Custom-Engine-Agents-Runbook.md
+├── Enterprise-RAG-Pattern/                                          ← ✅ Available
+│   ├── Enterprise-RAG-Pattern.md
+│   └── Enterprise-RAG-Pattern-Runbook.md
+├── Grounding-and-Response-Quality-Remediation/                       ← ✅ Available
+│   ├── Grounding-and-Response-Quality-Remediation.md
+│   └── Grounding-and-Response-Quality-Remediation-Runbook.md
+├── Human-in-the-Loop-Review-and-Approval/                            ← ✅ Available
+│   ├── Human-in-the-Loop-Review-and-Approval.md
+│   └── Human-in-the-Loop-Review-and-Approval-Runbook.md
+├── Intelligent-Document-Processing-Pipeline/                         ← ✅ Available
+│   ├── Intelligent-Document-Processing-Pipeline.md
+│   └── Intelligent-Document-Processing-Pipeline-Runbook.md
+├── MCP-Federated-Connectors/                                         ← ✅ Available
+│   ├── MCP-Federated-Connectors.md
+│   └── MCP-Federated-Connectors-Runbook.md
+└── MCP-Server-Integration/                                           ← ✅ Available
+    ├── MCP-Server-Integration.md
+    └── MCP-Server-Integration-Runbook.md
+```
+
+---
+
+## Pattern Folder Structure
+
+Each pattern folder follows a standardized 2-file structure:
+
+| File | Description |
+|------|-------------|
+| `[PatternName].md` | Pattern overview: what it is, when to use it, architecture diagram, step-by-step usage guide, and real-world scenarios. **Start here** to understand the pattern before applying it. |
+| `[PatternName]-Runbook.md` | Step-by-step implementation runbook: prerequisites, detailed configuration procedures, and validation steps. Use this during active delivery. |
+
+---
+
+## Example: Enterprise RAG Pattern
+
+The `Enterprise-RAG-Pattern/` folder is the reference example for how patterns are structured in this repository.
+
+### Folder Contents
+
+```
+02-patterns/
+└── Enterprise-RAG-Pattern/
+    ├── Enterprise-RAG-Pattern.md           ← Pattern overview & decision guide
+    └── Enterprise-RAG-Pattern-Runbook.md   ← Step-by-step implementation runbook
+```
+
+### What Each File Contains
+
+#### 📘 Enterprise-RAG-Pattern.md — Pattern Overview
+
+The pattern overview file answers the "What and Why" questions:
+
+- **Why this pattern:** Supported industries, data sources, and task types
+- **Architecture Diagram:** Mermaid-rendered data flow from user query to grounded response (Copilot Studio → Foundry IQ → Azure AI Search → Azure OpenAI)
+- **How to Use (Step-by-Step):** 7 steps from knowledge inventory to evaluation
+- **Real-World Scenarios:** 4 industry examples (Insurance, Healthcare, HR, Legal) with measurable outcomes
+- **When to Use / Avoid:** Decision table for pattern applicability
+- **SharePoint & OneDrive Integration Tiers:** Tier 1 (Native Direct) → Tier 2 (AI Search-Backed) → Tier 3 (Foundry IQ), with a decision flowchart
+- **Related Labs & Accelerators:** Links to hands-on labs and accelerator resources
+
+#### 📋 Enterprise-RAG-Pattern-Runbook.md — Implementation Runbook
+
+The runbook answers the "How" question with operational detail:
+
+- **Prerequisites:** Azure subscription, M365 tenant, Copilot Studio license
+- **Step-by-Step Procedures:** From knowledge source inventory through Azure AI Search index setup, permission trimming, Copilot Studio connection, response node configuration, citation surfacing, and evaluation
+- **Deliverables per Step:** Concrete outputs to validate completion at each stage
+
+---
+
+## How to Navigate Patterns
+
+Follow this decision flow when starting a new engagement:
+
+```
+Step 1. Identify the core technical challenge in the customer's scenario
+         ↓
+Step 2. Open 02-patterns/ → locate the matching pattern folder
+         ↓
+Step 3. Read [PatternName].md → confirm the pattern fits the architecture and use case
+         ↓
+Step 4. Check the "When to Use / Avoid" section → validate applicability
+         ↓
+Step 5. Follow [PatternName]-Runbook.md → execute step-by-step implementation
+         ↓
+Step 6. Cross-reference 01-scenarios/ → apply the pattern within the scenario runbook
+```
+
+> ⚠️ **Important:** Always validate the pattern against the customer's actual environment (data sources, licenses, access control requirements) before committing to implementation.
+
+---
+
+## Currently Available Patterns
+
+| Pattern | Description | Key Technologies | Status |
+|---------|-------------|------------------|--------|
+| [Enterprise RAG Pattern](./Enterprise-RAG-Pattern/Enterprise-RAG-Pattern.md) | Multi-source, governed retrieval-augmented generation. Grounds LLM responses in organizational data with access control and citation trails. | Copilot Studio, Azure AI Search, Azure OpenAI, Foundry IQ | ✅ Available |
+| [Agentic Workflow Orchestration](./Agentic-Workflow-Orchestration/Agentic-Workflow-Orchestration.md) | Multi-agent workflow orchestration pattern for coordinating complex, multi-step tasks across multiple specialized agents. | Copilot Studio, Azure AI Foundry, Agent Framework | ✅ Available |
+| [Declarative vs Custom Engine Agent](./Declarative-vs-Custom-engine-agent/Declarative-Agents-vs-Copilot-Studio-Custom-Engine-Agents.md) | Decision framework for choosing between Declarative Agents and Copilot Studio Custom Engine Agents. Covers three build methods (Agent Builder, Copilot Studio, Agents Toolkit), knowledge scale matrices, reference architectures, use-case scenarios, performance comparisons, and full implementation runbooks for both agent types and multi-agent composition. | Microsoft 365 Copilot, Copilot Studio, Agent Builder, Microsoft 365 Agents Toolkit, Azure OpenAI, Azure AI Search, Power Automate | ✅ Available |
+| [Copilot Connector Knowledge Onboarding](./Copilot-Connector-Knowledge-Onboarding/Copilot-Connector-Knowledge-Onboarding.md) | Getting third-party enterprise content into the Microsoft Graph index with correct permissions, so agents can ground on it. Covers connector type selection, source permission modelling, identity mapping, staged rollout, and the positive/negative permission evidence that unblocks security review. | Microsoft 365 Copilot connectors, Microsoft Graph, ServiceNow, Jira, Confluence, Salesforce, Workday | ✅ Available |
+| [MCP Federated Connectors](./MCP-Federated-Connectors/MCP-Federated-Connectors.md) | Live, read-only external retrieval without a Microsoft 365 source index. Covers gallery and custom onboarding, supported experiences, complex-authentication gaps, private-only on-premises blockers, conditional gateway designs, and host-level acceptance. Separate from direct MCP agent tools. | Microsoft 365 Copilot connectors, MCP, Entra SSO, OAuth 2.0, Researcher, Cowork | ✅ Available |
+| [Agent Governance & Rollout Control Plane](./Agent-Governance-and-Rollout-Control-Plane/Agent-Governance-and-Rollout-Control-Plane.md) | Separating agent creation from consumption, controlling sharing scope, establishing an approval route, and building the inventory and audit position enterprise rollouts depend on. The most common blocker between a working agent and a deployed one. | Microsoft 365 admin center, Power Platform admin center, Microsoft Entra, Microsoft Purview, Microsoft Agent 365 | ✅ Available |
+| [Copilot Credits & Cost Control](./Copilot-Credits-Cost-Control/Copilot-Credits-Cost-Control.md) | Consumption rates per agent feature, what enforcement actually stops (and what only alerts), capacity allocation by environment, per-agent caps, testing budgets, and chargeback design. | Copilot Studio, Power Platform admin center, Azure subscription (pay-as-you-go) | ✅ Available |
+| [Grounding & Response Quality Remediation](./Grounding-and-Response-Quality-Remediation/Grounding-and-Response-Quality-Remediation.md) | An ordered diagnostic ladder for agents that are built, connected, and still answering badly — reproducibility, user specificity, retrievability, content readability, retrieval path, instructions, platform change, and architectural fit. | Microsoft 365 Copilot, Copilot Studio, Microsoft Graph semantic index, Copilot Agent Kit | ✅ Available |
+| [Agent Publishing & Channel Deployment](./Agent-Publishing-and-Channel-Deployment/Agent-Publishing-and-Channel-Deployment.md) | The last mile: licensing prerequisites per channel, channel-specific behaviour differences, authentication and action attribution, and rich-content rendering across Microsoft 365 Copilot, Teams, SharePoint, web, and third-party channels. | Copilot Studio, Microsoft 365 Copilot, Microsoft Teams, SharePoint, Microsoft Entra | ✅ Available |
+| [MCP Server Integration](./MCP-Server-Integration/MCP-Server-Integration.md) | Connecting third-party systems to Copilot when connectors are not deep enough. The MCP-vs-connector decision, task-shaped tool design, plugin and tool count limits, per-user identity and protocol versioning, dynamic tool discovery, and operating the server as a production service. | Model Context Protocol, Copilot Cowork, declarative agents, Copilot Studio, Microsoft Foundry, Salesforce, Databricks, Snowflake | ✅ Available |
+| [Branded Office Artifact Generation](./Branded-Office-Artifact-Generation/Branded-Office-Artifact-Generation.md) | Making agent-generated PowerPoint, Word, and Excel output brand-compliant, factually reliable, and safe to send. Organization Asset Library setup, template hygiene, the entry-point × model test matrix, fidelity rules for missing data, and destructive-edit safety. | Copilot Cowork, Office Agent Mode, SharePoint Organization Asset Library, Microsoft 365 Copilot | ✅ Available |
+| [Copilot Studio Migration & Modernisation](./Copilot-Studio-Migration-and-Modernisation/Copilot-Studio-Migration-and-Modernisation.md) | Moving existing conversational and automation estates onto Copilot Studio. Covers inventory and disposition of the legacy estate, the pre-requisite work packages that stall the majority of migrations, parallel-run cut-over, and decommissioning. Written from a portfolio where every engagement was a migration, not a greenfield build. | Copilot Studio, Power Platform, Microsoft Entra, Microsoft Purview | ✅ Available |
+| [Copilot Studio & Foundry Split Architecture](./Copilot-Studio-and-Foundry-Split-Architecture/Copilot-Studio-and-Foundry-Split-Architecture.md) | Deciding what belongs in Copilot Studio and what belongs in Foundry, and how the two halves talk to each other. Capability boundary tests, the four common split topologies, ownership and lifecycle across two platforms, and the cost and latency consequences of the boundary. | Copilot Studio, Microsoft Foundry, Azure AI Search, Document Intelligence | ✅ Available |
+| [Intelligent Document Processing Pipeline](./Intelligent-Document-Processing-Pipeline/Intelligent-Document-Processing-Pipeline.md) | Classify → extract → validate → route → output. The reusable pipeline behind quote, invoice, order, contract, and form processing. Extraction stack selection, confidence threshold derivation from measured data, validation against master data, and the downstream boundary when the target system has no API. | Microsoft Foundry, Document Intelligence, Content Understanding, Power Automate, Copilot Studio | ✅ Available |
+| [Human-in-the-Loop Review & Approval](./Human-in-the-Loop-Review-and-Approval/Human-in-the-Loop-Review-and-Approval.md) | Designing the gate between an agent's output and a consequence. Where to place the gate, what the reviewer must be shown, confidence-based routing, review fatigue and rubber-stamping, escalation, and the audit record that makes the decision defensible. | Copilot Studio, Power Automate approvals, Dataverse, Microsoft Teams | ✅ Available |
+
+---
+
+## Pattern Naming Convention
+
+Use **Kebab-Case** (hyphens) for all pattern folder and file names:
+
+| ✅ Correct | ❌ Incorrect |
+|-----------|-------------|
+| `Enterprise-RAG-Pattern/` | `Enterprise_RAG_Pattern/` |
+| `Enterprise-RAG-Pattern.md` | `EnterpriseRAGPattern.md` |
+| `Enterprise-RAG-Pattern-Runbook.md` | `enterprise_rag_runbook.md` |
+
+---
+
+## How to Add a New Pattern
+
+1. Create a new folder under `02-patterns/` using the naming convention above
+2. Add `[PatternName].md` — Pattern overview (follow the Enterprise RAG Pattern as the reference template)
+3. Add `[PatternName]-Runbook.md` — Step-by-step implementation runbook
+4. Update the **Currently Available Patterns** table in this file
+5. Cross-reference the pattern in any relevant scenario files under `01-scenarios/`
+
+---
+
+📌 **Looking for a scenario to apply this pattern to?**
+Head to [`01-scenarios/`](../01-scenarios/) to explore pre-built agent delivery runbooks.
