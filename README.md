@@ -19,7 +19,7 @@ Whether you're building your first agent or scaling across multiple business dom
 └── 📂 03-references/        → Access additional resources, templates, and reference materials
 ```
 
-## How to use this repository
+### How to use this repository
 
 | Purpose | Description | Starting Path |
 |---------|-------------|----------------|
